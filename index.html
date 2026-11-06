@@ -1,496 +1,885 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Patrice Oyende — Full Stack Developer CV</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+  <meta charset="UTF-8">
+  <title>Patrice Oyende — Full Stack Developer CV</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  :root {
-    --accent: #1A5276;
-    --accent-light: #2E86C1;
-    --accent-pale: #EBF5FB;
-    --text: #1a1a2e;
-    --muted: #5a6478;
-    --border: #d0dce8;
-    --tag-bg: #EBF5FB;
-    --tag-text: #1A5276;
-    --white: #ffffff;
-    --page-bg: #f5f7fa;
-  }
+    @page {
+      size: A4 portrait;
+      margin: 8.5mm 13.5mm 8.5mm 13.5mm;
+    }
 
-  body {
-    font-family: 'Inter', sans-serif;
-    background: var(--page-bg);
-    color: var(--text);
-    line-height: 1.6;
-    font-size: 13.5px;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-  }
+    html, body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #0f172a;
+      background: #ffffff;
+      line-height: 1.38;
+      font-size: 8.75pt;
+      -webkit-font-smoothing: antialiased;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
 
-  .page {
-    max-width: 900px;
-    margin: 32px auto;
-    background: var(--white);
-    box-shadow: 0 4px 32px rgba(26,82,118,0.10);
-    border-radius: 12px;
-    overflow: hidden;
-  }
+    .cv-page {
+      width: 100%;
+      max-width: 820px;
+      margin: 0 auto;
+    }
 
-  /* HEADER */
-  .header {
-    background: linear-gradient(135deg, #1A5276 0%, #2471A3 60%, #2E86C1 100%);
-    color: white;
-    padding: 44px 52px 36px;
-    position: relative;
-    overflow: hidden;
-  }
-  .header::before {
-    content: '';
-    position: absolute;
-    top: -40px; right: -40px;
-    width: 220px; height: 220px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.06);
-  }
-  .header::after {
-    content: '';
-    position: absolute;
-    bottom: -60px; right: 80px;
-    width: 160px; height: 160px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.04);
-  }
-  .header-name {
-    font-size: 36px;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    margin-bottom: 6px;
-  }
-  .header-title {
-    font-size: 14px;
-    font-weight: 400;
-    opacity: 0.88;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin-bottom: 22px;
-  }
-  .contact-strip {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 18px;
-    font-size: 12.5px;
-    opacity: 0.92;
-  }
-  .contact-item {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .contact-item a { color: white; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.35); }
-  .contact-item a:hover { border-bottom-color: white; }
-  .dot { opacity: 0.5; }
+    .page-break {
+      page-break-before: always;
+      break-before: always;
+    }
 
-  /* BODY */
-  .body {
-    display: grid;
-    grid-template-columns: 1fr 280px;
-    gap: 0;
-  }
+    .avoid-break {
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
 
-  /* MAIN COLUMN */
-  .main { padding: 36px 40px 40px 52px; border-right: 1px solid var(--border); }
+    /* HEADER */
+    .header {
+      margin-bottom: 9px;
+      padding-bottom: 7px;
+      border-bottom: 2px solid #0f172a;
+    }
 
-  /* SIDEBAR */
-  .sidebar { padding: 36px 32px 40px; background: #f8fafc; }
+    .name {
+      font-size: 23pt;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #0f172a;
+      line-height: 1.1;
+      margin-bottom: 3px;
+    }
 
-  /* SECTION */
-  .section { margin-bottom: 32px; }
-  .section:last-child { margin-bottom: 0; }
+    .headline {
+      font-size: 10.25pt;
+      font-weight: 600;
+      color: #1d4ed8;
+      letter-spacing: 0.2px;
+      margin-bottom: 5px;
+    }
 
-  .section-title {
-    font-size: 10.5px;
-    font-weight: 700;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 14px;
-    padding-bottom: 7px;
-    border-bottom: 2px solid var(--accent);
-    display: inline-block;
-  }
+    .contact-strip {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 3px 10px;
+      font-size: 8.5pt;
+      color: #334155;
+    }
 
-  /* SUMMARY */
-  .summary-text {
-    font-size: 13.5px;
-    line-height: 1.75;
-    color: #2c3e50;
-  }
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+    }
 
-  /* EXPERIENCE */
-  .exp-item { margin-bottom: 22px; }
-  .exp-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px; }
-  .exp-role { font-weight: 700; font-size: 14.5px; color: var(--text); }
-  .exp-date { font-size: 11.5px; color: var(--muted); font-weight: 500; white-space: nowrap; margin-left: 12px; }
-  .exp-company { font-size: 13px; color: var(--accent-light); font-weight: 600; margin-bottom: 10px; }
-  .exp-bullets { list-style: none; padding: 0; }
-  .exp-bullets li {
-    padding-left: 16px;
-    position: relative;
-    font-size: 13px;
-    color: #2c3e50;
-    margin-bottom: 5px;
-    line-height: 1.6;
-  }
-  .exp-bullets li::before {
-    content: '›';
-    position: absolute;
-    left: 0;
-    color: var(--accent-light);
-    font-weight: 700;
-    font-size: 15px;
-    line-height: 1.4;
-  }
+    .contact-item a {
+      color: #0f172a;
+      text-decoration: none;
+      font-weight: 500;
+    }
 
-  /* PROJECTS */
-  .project-item {
-    margin-bottom: 20px;
-    padding: 14px 16px;
-    border-left: 3px solid var(--accent);
-    background: var(--accent-pale);
-    border-radius: 0 8px 8px 0;
-  }
-  .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px; }
-  .project-name { font-weight: 700; font-size: 13.5px; color: var(--accent); }
-  .project-type { font-size: 11px; color: var(--muted); font-weight: 500; }
-  .project-desc { font-size: 12.5px; color: #2c3e50; margin-bottom: 8px; line-height: 1.6; }
-  .tech-tags { display: flex; flex-wrap: wrap; gap: 5px; }
-  .tag {
-    background: white;
-    color: var(--accent);
-    font-size: 10.5px;
-    font-weight: 600;
-    padding: 2px 8px;
-    border-radius: 4px;
-    border: 1px solid var(--border);
-    font-family: 'Fira Code', monospace;
-  }
+    .contact-item a:hover {
+      color: #1d4ed8;
+      text-decoration: underline;
+    }
 
-  /* SIDEBAR SECTIONS */
-  .sidebar .section-title { font-size: 10px; letter-spacing: 2px; }
+    .sep {
+      color: #94a3b8;
+      font-weight: 400;
+    }
 
-  /* SKILLS */
-  .skill-category { margin-bottom: 16px; }
-  .skill-cat-name { font-weight: 700; font-size: 11.5px; color: var(--accent); margin-bottom: 7px; text-transform: uppercase; letter-spacing: 0.5px; }
-  .skill-tags { display: flex; flex-wrap: wrap; gap: 5px; }
-  .skill-tag {
-    background: var(--white);
-    color: #2c3e50;
-    font-size: 11px;
-    font-weight: 500;
-    padding: 3px 9px;
-    border-radius: 5px;
-    border: 1px solid var(--border);
-  }
+    /* SECTION STYLING */
+    .section {
+      margin-bottom: 9px;
+    }
 
-  /* REFERENCES */
-  .ref-item { margin-bottom: 14px; }
-  .ref-name { font-weight: 700; font-size: 13px; color: var(--text); }
-  .ref-role { font-size: 11.5px; color: var(--accent-light); font-weight: 500; margin-bottom: 3px; }
-  .ref-quote { font-size: 11.5px; color: var(--muted); font-style: italic; line-height: 1.5; }
+    .section-title {
+      font-size: 9.25pt;
+      font-weight: 700;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+      color: #0f172a;
+      padding-bottom: 2px;
+      border-bottom: 1.5px solid #cbd5e1;
+      margin-bottom: 6px;
+    }
 
-  /* EDUCATION */
-  .edu-item { margin-bottom: 14px; }
-  .edu-degree { font-weight: 700; font-size: 13px; color: var(--text); }
-  .edu-school { font-size: 12px; color: var(--accent-light); font-weight: 500; }
-  .edu-year { font-size: 11px; color: var(--muted); }
+    /* SUMMARY */
+    .summary-text {
+      font-size: 8.75pt;
+      color: #1e293b;
+      line-height: 1.5;
+      text-align: justify;
+    }
 
-  /* ACHIEVEMENTS */
-  .ach-item { font-size: 12.5px; color: #2c3e50; margin-bottom: 6px; padding-left: 14px; position: relative; }
-  .ach-item::before { content: '★'; position: absolute; left: 0; color: #F1C40F; font-size: 10px; top: 2px; }
+    /* ITEM CARDS */
+    .item {
+      margin-bottom: 6.5px;
+    }
 
-  /* PRINT */
-  @media print {
-    body { background: white; font-size: 11.5px; }
-    .page { margin: 0; box-shadow: none; border-radius: 0; max-width: none; }
-    .header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    .project-item { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  }
+    .item:last-child {
+      margin-bottom: 0;
+    }
 
-  @media (max-width: 700px) {
-    .body { grid-template-columns: 1fr; }
-    .main { border-right: none; border-bottom: 1px solid var(--border); padding: 28px 24px; }
-    .sidebar { padding: 28px 24px; }
-    .header { padding: 28px 24px; }
-    .header-name { font-size: 26px; }
-  }
-</style>
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1px;
+    }
+
+    .item-title {
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .item-subtitle {
+      font-size: 8.25pt;
+      color: #475569;
+      font-weight: 500;
+    }
+
+    .item-role {
+      font-weight: 600;
+      color: #1d4ed8;
+      font-size: 8.75pt;
+    }
+
+    .item-meta {
+      font-size: 8pt;
+      color: #64748b;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .tech-line {
+      font-size: 7.75pt;
+      color: #475569;
+      margin-bottom: 2px;
+      line-height: 1.35;
+    }
+
+    .tech-label {
+      font-weight: 600;
+      font-size: 7.75pt;
+      color: #0f172a;
+      margin-right: 2px;
+    }
+
+    .tech-badge {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 7pt;
+      padding: 0px 4px;
+      background: #f1f5f9;
+      color: #1e293b;
+      border: 1px solid #e2e8f0;
+      border-radius: 3px;
+      font-weight: 500;
+      margin-right: 2px;
+    }
+
+    .project-link {
+      font-size: 7.75pt;
+      color: #1d4ed8;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .bullets {
+      list-style-type: none;
+      padding-left: 0;
+      margin-top: 1.5px;
+    }
+
+    .bullets li {
+      position: relative;
+      padding-left: 11px;
+      margin-bottom: 1.5px;
+      font-size: 8.5pt;
+      color: #334155;
+      line-height: 1.4;
+    }
+
+    .bullets li:last-child {
+      margin-bottom: 0;
+    }
+
+    .bullets li::before {
+      content: '–';
+      position: absolute;
+      left: 1px;
+      color: #1d4ed8;
+      font-weight: 700;
+    }
+
+    /* SKILLS CONTAINER (Modern Table-less Design) */
+    .skills-container {
+      display: flex;
+      flex-direction: column;
+      gap: 4.5px;
+    }
+
+    .skill-row {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      align-items: baseline;
+      padding: 4px 7px;
+      background: #f8fafc;
+      border-radius: 4.5px;
+      border: 1px solid #f1f5f9;
+    }
+
+    .skill-label {
+      font-size: 8pt;
+      font-weight: 700;
+      color: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+
+    .skill-list {
+      font-size: 8.25pt;
+      color: #334155;
+      line-height: 1.35;
+    }
+
+    /* EDUCATION & CERTS */
+    .edu-item, .cert-item {
+      margin-bottom: 6px;
+    }
+
+    .edu-item:last-child, .cert-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .edu-degree {
+      font-size: 9pt;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .edu-school {
+      font-size: 8.5pt;
+      color: #1d4ed8;
+      font-weight: 500;
+    }
+
+    .edu-desc {
+      font-size: 8pt;
+      color: #475569;
+      margin-top: 1px;
+    }
+
+    .ach-list {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .ach-list li {
+      position: relative;
+      padding-left: 11px;
+      margin-bottom: 2px;
+      font-size: 8.5pt;
+      color: #334155;
+      line-height: 1.4;
+    }
+
+    .ach-list li::before {
+      content: '›';
+      position: absolute;
+      left: 1px;
+      color: #1d4ed8;
+      font-weight: 700;
+      font-size: 10pt;
+      line-height: 1;
+    }
+
+    .ref-box {
+      font-size: 8.5pt;
+      color: #475569;
+      font-style: italic;
+    }
+  
+    @media screen {
+      body {
+        background: #f1f5f9;
+        padding: 24px 16px 48px;
+      }
+      .cv-page {
+        background: #ffffff;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        border-radius: 4px;
+        padding: 34px 40px;
+        margin: 0 auto 24px auto;
+        border: 1px solid #e2e8f0;
+      }
+      .web-bar {
+        max-width: 820px;
+        margin: 0 auto 16px auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #0f172a;
+        color: #ffffff;
+        padding: 12px 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(15, 23, 42, 0.15);
+      }
+      .web-bar-title {
+        font-size: 13.5px;
+        font-weight: 600;
+        color: #f8fafc;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .web-bar-badge {
+        background: #1e293b;
+        color: #38bdf8;
+        font-size: 10.5px;
+        padding: 2px 8px;
+        border-radius: 12px;
+        border: 1px solid #334155;
+      }
+      .web-bar-actions {
+        display: flex;
+        gap: 10px;
+      }
+      .web-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 14px;
+        border-radius: 6px;
+        font-size: 12.5px;
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.15s ease;
+      }
+      .web-btn-primary {
+        background: #2563eb;
+        color: #ffffff;
+        border: none;
+      }
+      .web-btn-primary:hover {
+        background: #1d4ed8;
+      }
+      .web-btn-outline {
+        background: #1e293b;
+        color: #e2e8f0;
+        border: 1px solid #475569;
+      }
+      .web-btn-outline:hover {
+        background: #334155;
+        color: #ffffff;
+      }
+    }
+
+    @media print {
+      .web-bar {
+        display: none !important;
+      }
+      body {
+        background: #ffffff !important;
+        padding: 0 !important;
+      }
+      .cv-page {
+        box-shadow: none !important;
+        padding: 0 !important;
+        border-radius: 0 !important;
+        border: none !important;
+        margin: 0 !important;
+      }
+    }
+
+  </style>
 </head>
 <body>
-<div class="page">
 
-  <!-- HEADER -->
-  <div class="header">
-    <div class="header-name">Patrice Oyende</div>
-    <div class="header-title">Full Stack Developer &nbsp;·&nbsp; Software Engineer &nbsp;·&nbsp; Web Developer</div>
-    <div class="contact-strip">
-      <span class="contact-item">📍 Nairobi, Kenya</span>
-      <span class="contact-item">✉ <a href="mailto:abellepatrice@gmail.com">abellepatrice@gmail.com</a></span>
-      <span class="contact-item">🌐 <a href="https://portfolio-abelle-group.vercel.app" target="_blank">portfolio-abelle-group.vercel.app</a></span>
-      <span class="contact-item">💻 <a href="https://github.com/abellepatrice" target="_blank">github.com/abellepatrice</a></span>
-      <span class="contact-item">🔗 <a href="https://linkedin.com/in/patrice-oyende-84965b306" target="_blank">LinkedIn</a></span>
+  <div class="web-bar">
+    <div class="web-bar-title">
+      <span>Patrice Oyende — Executive Curriculum Vitae</span>
+      <span class="web-bar-badge">Updated Nov 2026</span>
+    </div>
+    <div class="web-bar-actions">
+      <a href="Patrice_Oyende_CV.pdf" download class="web-btn web-btn-primary">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download PDF
+      </a>
+      <button onclick="window.print()" class="web-btn web-btn-outline">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        Print
+      </button>
     </div>
   </div>
 
-  <div class="body">
 
-    <!-- MAIN COLUMN -->
-    <div class="main">
+<div class="cv-page">
 
-      <!-- SUMMARY -->
-      <div class="section">
-        <div class="section-title">Professional Summary</div>
-        <p class="summary-text">
-          Results-driven Full Stack Developer with hands-on experience architecting and shipping scalable web and mobile applications across fintech, e-commerce, service management, and travel sectors. Founder of <strong>AbelleGroup</strong>, a software development studio delivering SaaS-oriented digital products for startups and growing businesses. Proficient across the entire development stack — from responsive React frontends to Node.js/Flask backends, RESTful APIs, and PostgreSQL/MongoDB database systems. Combines strong product-thinking with clean architecture practices to build systems that are secure, maintainable, and built to scale.
-        </p>
+  <!-- ==================== PAGE 1 ==================== -->
+  <div class="page-block">
+    <!-- HEADER -->
+    <header class="header">
+      <h1 class="name">PATRICE OYENDE</h1>
+      <div class="headline">Full Stack Developer &nbsp;|&nbsp; Software Engineer &nbsp;|&nbsp; Web & Mobile Developer</div>
+      <div class="contact-strip">
+        <span class="contact-item">Nairobi, Kenya</span>
+        <span class="sep">•</span>
+        <span class="contact-item"><a href="mailto:abellepatrice@gmail.com">abellepatrice@gmail.com</a></span>
+        <span class="sep">•</span>
+        <span class="contact-item"><a href="https://patrice.abelle.site" target="_blank">patrice.abelle.site</a></span>
+        <span class="sep">•</span>
+        <span class="contact-item"><a href="https://github.com/abellepatrice" target="_blank">github.com/abellepatrice</a></span>
+        <span class="sep">•</span>
+        <span class="contact-item"><a href="https://www.linkedin.com/in/patriceoyende" target="_blank">linkedin.com/in/patriceoyende</a></span>
+      </div>
+    </header>
+
+    <!-- PROFESSIONAL SUMMARY -->
+    <section class="section">
+      <h2 class="section-title">Professional Summary</h2>
+      <p class="summary-text">
+        Results-driven Full Stack Developer with hands-on experience architecting and shipping scalable web and mobile applications across fintech, health tech, service management, and travel sectors. Founder of AbelleGroup, a software development studio delivering SaaS-oriented digital products for startups and growing businesses. Proficient across the entire development stack — from responsive React/Next.js frontends and React Native mobile apps to Node.js/NestJS/Flask backends, RESTful APIs, and PostgreSQL/Supabase/MongoDB database systems. Combines strong product thinking with security-first architecture practices (KDPA 2019 compliance, RLS access control) to build systems that are secure, maintainable, and built to scale.
+      </p>
+    </section>
+
+    <!-- WORK EXPERIENCE -->
+    <section class="section">
+      <h2 class="section-title">Work Experience</h2>
+
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">Developer</span>
+            <span class="item-role"> — Clover (Human Squared Health)</span>
+          </div>
+          <div class="item-meta">January 2026 – April 2026 &nbsp;|&nbsp; Remote</div>
+        </div>
+        <ul class="bullets">
+          <li>Developed and maintained full stack features across web and mobile surfaces using NestJS, Next.js, Flutter, and Dart within an agile sprint-based workflow.</li>
+          <li>Built and integrated RESTful APIs connecting frontend clients to backend services, maintaining reliable data flow, validation, and error handling practices.</li>
+          <li>Contributed to cross-platform application functionality focused on performance, usability, and responsive user experiences.</li>
+          <li>Collaborated with product and design teams to translate UI mockups into responsive, production-ready interfaces using Tailwind CSS.</li>
+          <li>Improved application performance and system reliability through debugging, optimisation, and refinement of backend data access patterns.</li>
+          <li>Participated in code reviews, testing workflows, and technical documentation to maintain engineering standards and codebase quality.</li>
+          <li>Supported staging and production deployment workflows, monitored application stability, and resolved post-release issues.</li>
+        </ul>
       </div>
 
-      <!-- EXPERIENCE -->
-      <div class="section">
-        <div class="section-title">Work Experience</div>
-        <div class="exp-item">
-          <div class="exp-header">
-            <div class="exp-role">Developer</div>
-            <div class="exp-date">Jan 2026 – Apr 2026</div>
+      <div class="item" style="margin-top: 7px;">
+        <div class="item-header">
+          <div>
+            <span class="item-title">Founder & Lead Developer</span>
+            <span class="item-role"> — AbelleGroup</span>
           </div>
-          <div class="exp-company">Clover &nbsp;|&nbsp; Remote</div>
-          <ul class="exp-bullets">
-            <li>Developed and maintained full stack features using NestJS, Next.js, Flutter, and Dart within an agile sprint workflow, contributing to the Clover TODO cross-platform application.</li>
-            <li>Built and integrated RESTful APIs connecting frontend clients to backend services, ensuring consistent data contracts, authentication, and structured error handling.</li>
-            <li>Translated design mockups into pixel-accurate, responsive UI components using Tailwind CSS and Next.js, collaborating closely with the product team.</li>
-            <li>Optimised database query performance and reduced API response times by restructuring data access patterns and adding appropriate indexing.</li>
-            <li>Participated in code reviews, wrote unit tests, maintained technical documentation, and deployed updates to staging and production environments.</li>
-            <li>Resolved post-release issues, monitored application health, and contributed to an overall culture of quality and accountability across the engineering team.</li>
-          </ul>
+          <div class="item-meta">January 2024 – Present &nbsp;|&nbsp; Nairobi, Kenya</div>
         </div>
+        <ul class="bullets">
+          <li>Founded and lead AbelleGroup, architecting and shipping 6+ production-grade web and mobile applications across fintech, e-commerce, service management, and travel.</li>
+          <li>Designed full-stack architectures using React, Next.js, React Native, Node.js, and Express, implementing role-based access control (RBAC) and JWT authentication.</li>
+          <li>Integrated regional and global payment systems including M-Pesa Daraja (STK Push) and Paystack, handling webhook verification and resilient transaction flows.</li>
+          <li>Managed end-to-end product lifecycles from ideation and schema design to CI/CD deployments on Vercel, Render, and PythonAnywhere.</li>
+        </ul>
       </div>
+    </section>
 
-      <!-- PROJECTS -->
-      <div class="section">
-        <div class="section-title">Projects</div>
+    <!-- FEATURED HEALTH TECH PLATFORM -->
+    <section class="section">
+      <h2 class="section-title">Featured Health Tech Platform</h2>
 
-        <div class="project-item">
-          <div class="project-header">
-            <div class="project-name">AbelleGroup Invoicing System</div>
-            <div class="project-type">Multi-Tenant SaaS · Fintech</div>
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">DTLC Health Partner App</span>
+            <span class="item-subtitle"> — Chronic Illness & Wellness Platform (Diabesity Nutrition Centre)</span>
           </div>
-          <div class="project-desc">Architected a multi-tenant invoicing and billing platform with organisation workspaces, role-based access control, invoice lifecycle management, payment tracking, audit logging, and an API-first design backed by PostgreSQL with Supabase row-level security.</div>
-          <div class="tech-tags">
-            <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">PostgreSQL</span><span class="tag">Supabase</span><span class="tag">TypeScript</span>
-          </div>
+          <div class="item-meta">Contract · Health Tech</div>
         </div>
-
-        <div class="project-item">
-          <div class="project-header">
-            <div class="project-name">Roaring Lion Tours & Travel</div>
-            <div class="project-type">Client Project · Tourism</div>
-          </div>
-          <div class="project-desc">Built a full-featured travel website for a client tourism company: tour package listings, itinerary pages, destination gallery, interactive booking form, and contact system. Deployed and live in production at abellepatrice.pythonanywhere.com.</div>
-          <div class="tech-tags">
-            <span class="tag">Python</span><span class="tag">Flask</span><span class="tag">React.js</span><span class="tag">Bootstrap</span><span class="tag">HTML5/CSS3</span><span class="tag">PythonAnywhere</span>
-          </div>
+        <div class="tech-line">
+          <span class="tech-label">Tech:</span>
+          <span class="tech-badge">React Native</span>
+          <span class="tech-badge">Expo</span>
+          <span class="tech-badge">TypeScript</span>
+          <span class="tech-badge">Node.js</span>
+          <span class="tech-badge">Express</span>
+          <span class="tech-badge">Supabase</span>
+          <span class="tech-badge">KDPA 2019</span>
         </div>
-
-        <div class="project-item">
-          <div class="project-header">
-            <div class="project-name">Speedy Spanners</div>
-            <div class="project-type">Service Management · Android</div>
-          </div>
-          <div class="project-desc">Engineered a garage management platform with repair job workflows, customer records, service booking, payment processing, and an Android (Kotlin) companion app integrating with the Express.js backend via REST APIs.</div>
-          <div class="tech-tags">
-            <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">MongoDB</span><span class="tag">Kotlin</span><span class="tag">Android</span>
-          </div>
-        </div>
-
-        <div class="project-item">
-          <div class="project-header">
-            <div class="project-name">Loan Management System</div>
-            <div class="project-type">Fintech · Mobile</div>
-          </div>
-          <div class="project-desc">Built individual and group loan workflows with admin approval queues, repayment scheduling, real-time analytics dashboards, and a React Native mobile frontend connected to the Node.js backend API.</div>
-          <div class="tech-tags">
-            <span class="tag">Node.js</span><span class="tag">React Native</span><span class="tag">MongoDB</span><span class="tag">REST APIs</span>
-          </div>
-        </div>
-
-        <div class="project-item">
-          <div class="project-header">
-            <div class="project-name">Elite Shop</div>
-            <div class="project-type">E-Commerce</div>
-          </div>
-          <div class="project-desc">Developed a secure e-commerce platform with admin-only product management, authentication flows, shopping cart, and purchase workflows built on Next.js and Supabase.</div>
-          <div class="tech-tags">
-            <span class="tag">Next.js</span><span class="tag">Supabase</span><span class="tag">Tailwind CSS</span><span class="tag">TypeScript</span>
-          </div>
-        </div>
-
-        <div class="project-item">
-          <div class="project-header">
-            <div class="project-name">Cineverxe</div>
-            <div class="project-type">Open Source · Movie App</div>
-          </div>
-          <div class="project-desc">Movie discovery application integrated with an external movie database API, featuring browsing, search, and detailed film views. Open source on GitHub.</div>
-          <div class="tech-tags">
-            <span class="tag">React</span><span class="tag">JavaScript</span><span class="tag">REST API</span>
-          </div>
-        </div>
-
+        <ul class="bullets">
+          <li>Built the cross-platform chronic illness and wellness mobile application from scratch for iOS and Android.</li>
+          <li>Engineered clinical biomarker calculators for diabesity, blood pressure staging, BMI (metric/imperial toggle & comorbidity risk), blood glucose, and lipid profiles.</li>
+          <li>Conducted comprehensive end-to-end security auditing; implemented strict Row-Level Security (RLS) data isolation and zero-retention session logout data wiping aligned with Kenya Data Protection Act (KDPA 2019).</li>
+          <li>Built and verified push notification pipelines via Expo for medication scheduling, dosage intervals, and daily adherence reminders.</li>
+          <li>Implemented health tracking telemetry, clinical PDF audit report exports, and verified API remediation against access control vulnerabilities.</li>
+        </ul>
       </div>
-    </div>
-
-    <!-- SIDEBAR -->
-    <div class="sidebar">
-
-      <!-- SKILLS -->
-      <div class="section">
-        <div class="section-title">Technical Skills</div>
-
-        <div class="skill-category">
-          <div class="skill-cat-name">Frontend</div>
-          <div class="skill-tags">
-            <span class="skill-tag">React</span>
-            <span class="skill-tag">Next.js</span>
-            <span class="skill-tag">React Native</span>
-            <span class="skill-tag">TypeScript</span>
-            <span class="skill-tag">JavaScript</span>
-            <span class="skill-tag">HTML5</span>
-            <span class="skill-tag">CSS3</span>
-            <span class="skill-tag">Tailwind</span>
-            <span class="skill-tag">Bootstrap</span>
-          </div>
-        </div>
-
-        <div class="skill-category">
-          <div class="skill-cat-name">Backend</div>
-          <div class="skill-tags">
-            <span class="skill-tag">Node.js</span>
-            <span class="skill-tag">Express.js</span>
-            <span class="skill-tag">NestJS</span>
-            <span class="skill-tag">Flask</span>
-            <span class="skill-tag">PHP</span>
-            <span class="skill-tag">Laravel</span>
-          </div>
-        </div>
-
-        <div class="skill-category">
-          <div class="skill-cat-name">Databases</div>
-          <div class="skill-tags">
-            <span class="skill-tag">PostgreSQL</span>
-            <span class="skill-tag">MongoDB</span>
-            <span class="skill-tag">MySQL</span>
-            <span class="skill-tag">Supabase</span>
-            <span class="skill-tag">Firebase</span>
-          </div>
-        </div>
-
-        <div class="skill-category">
-          <div class="skill-cat-name">Mobile</div>
-          <div class="skill-tags">
-            <span class="skill-tag">Kotlin</span>
-            <span class="skill-tag">Android Studio</span>
-            <span class="skill-tag">Flutter</span>
-            <span class="skill-tag">Dart</span>
-          </div>
-        </div>
-
-        <div class="skill-category">
-          <div class="skill-cat-name">Tools & Platforms</div>
-          <div class="skill-tags">
-            <span class="skill-tag">Git</span>
-            <span class="skill-tag">GitHub</span>
-            <span class="skill-tag">Postman</span>
-            <span class="skill-tag">Vercel</span>
-            <span class="skill-tag">Render</span>
-            <span class="skill-tag">Docker</span>
-            <span class="skill-tag">VS Code</span>
-          </div>
-        </div>
-
-        <div class="skill-category">
-          <div class="skill-cat-name">Concepts</div>
-          <div class="skill-tags">
-            <span class="skill-tag">REST API Design</span>
-            <span class="skill-tag">Auth Systems</span>
-            <span class="skill-tag">Multi-Tenancy</span>
-            <span class="skill-tag">Responsive UI</span>
-            <span class="skill-tag">Cybersecurity</span>
-            <span class="skill-tag">Agile/Scrum</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- EDUCATION -->
-      <div class="section">
-        <div class="section-title">Education</div>
-        <div class="edu-item">
-          <div class="edu-degree">[Degree / Diploma]</div>
-          <div class="edu-school">[Institution Name]</div>
-          <div class="edu-year">[Year] · Nairobi, Kenya</div>
-        </div>
-        <div class="edu-item">
-          <div class="edu-degree">Cybersecurity — Self-directed</div>
-          <div class="edu-school">Ethical Hacking · Network Security</div>
-          <div class="edu-year">Ongoing</div>
-        </div>
-      </div>
-
-      <!-- CERTIFICATIONS -->
-      <div class="section">
-        <div class="section-title">Certifications</div>
-        <div style="font-size:11.5px; color:var(--muted); font-style:italic; line-height:1.6;">
-          [Certification Name]<br>
-          [Issuing Body · Year]<br><br>
-          Add relevant certs here, e.g.:<br>
-          AWS Cloud Practitioner,<br>
-          Meta Front-End Developer, etc.
-        </div>
-      </div>
-
-      <!-- ACHIEVEMENTS -->
-      <div class="section">
-        <div class="section-title">Achievements</div>
-        <div class="ach-item">Founder & Lead Developer, AbelleGroup — built 6+ production-grade applications.</div>
-        <div class="ach-item">Delivered Roaring Lion Tours as a live client project.</div>
-        <div class="ach-item">13 public repositories on GitHub across web, mobile, and fintech domains.</div>
-      </div>
-
-      <!-- REFERENCES -->
-      <div class="section">
-        <div class="section-title">References</div>
-        <div class="ref-item">
-          <div class="ref-name">Gerald</div>
-          <div class="ref-role">Client</div>
-          <div class="ref-quote">"Patrice was amazing to work with, delivered on time with great quality."</div>
-        </div>
-        <div class="ref-item">
-          <div class="ref-name">Emmanuel Abelle</div>
-          <div class="ref-role">Collaborator / Co-developer</div>
-          <div class="ref-quote">"Super collaborative, always solves problems with a creative approach."</div>
-        </div>
-        <div class="ref-item">
-          <div class="ref-name">David</div>
-          <div class="ref-role">Mentor</div>
-          <div class="ref-quote">"A fast learner and always curious to improve and explore new tech."</div>
-        </div>
-        <div style="font-size:11px; color:var(--muted); margin-top:8px; font-style:italic;">Full contact details available on request.</div>
-      </div>
-
-    </div>
+    </section>
   </div>
+
+  <!-- ==================== PAGE 2 ==================== -->
+  <div class="page-break"></div>
+  <div class="page-block">
+    <!-- PRODUCTION & CLIENT PROJECTS -->
+    <section class="section">
+      <h2 class="section-title">Production & Client Projects</h2>
+
+      <!-- ABELLEGROUP INVOICING SYSTEM -->
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">AbelleGroup Invoicing System</span>
+            <span class="item-subtitle"> — Multi-Tenant SaaS Billing Platform</span>
+          </div>
+          <div class="item-meta">SaaS · Fintech</div>
+        </div>
+        <div class="tech-line">
+          <span class="tech-label">Tech:</span>
+          <span class="tech-badge">React</span>
+          <span class="tech-badge">Node.js</span>
+          <span class="tech-badge">Express.js</span>
+          <span class="tech-badge">PostgreSQL</span>
+          <span class="tech-badge">Supabase</span>
+          <span class="tech-badge">TypeScript</span>
+        </div>
+        <ul class="bullets">
+          <li>Architected a multi-tenant invoicing platform supporting independent organisation workspaces, role-based access control, and invoice lifecycle management.</li>
+          <li>Designed audit logging and payment tracking systems backed by a normalised PostgreSQL schema with row-level security via Supabase.</li>
+          <li>Implemented automated invoice sequencing, PDF generation, and API-first architecture to support future mobile integrations.</li>
+        </ul>
+      </div>
+
+      <!-- CLOVER TODO APP -->
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">Clover TODO App</span>
+            <span class="item-subtitle"> — Cross-Platform Task Management Application</span>
+          </div>
+          <div class="item-meta"><a href="https://github.com/abellepatrice/TODO" target="_blank" class="project-link">github.com/abellepatrice/TODO</a></div>
+        </div>
+        <div class="tech-line">
+          <span class="tech-label">Tech:</span>
+          <span class="tech-badge">NestJS</span>
+          <span class="tech-badge">Next.js</span>
+          <span class="tech-badge">Flutter</span>
+          <span class="tech-badge">TypeScript</span>
+          <span class="tech-badge">Dart</span>
+          <span class="tech-badge">Node.js</span>
+        </div>
+        <ul class="bullets">
+          <li>Built a full-stack task management application featuring a NestJS backend, a Next.js web interface, and a Flutter mobile app.</li>
+          <li>Implemented task creation, editing, completion tracking, and synchronised user workflows across web and mobile platforms.</li>
+          <li>Designed RESTful API endpoints and managed frontend-backend integration to deliver a consistent cross-platform user experience.</li>
+        </ul>
+      </div>
+
+      <!-- ROARING LION TOURS & TRAVEL -->
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">Roaring Lion Tours & Travel</span>
+            <span class="item-subtitle"> — Client Travel Booking Portal (Live Production)</span>
+          </div>
+          <div class="item-meta"><a href="https://abellepatrice.pythonanywhere.com" target="_blank" class="project-link">abellepatrice.pythonanywhere.com</a></div>
+        </div>
+        <div class="tech-line">
+          <span class="tech-label">Tech:</span>
+          <span class="tech-badge">Python</span>
+          <span class="tech-badge">Flask</span>
+          <span class="tech-badge">React.js</span>
+          <span class="tech-badge">Bootstrap</span>
+          <span class="tech-badge">MySQL</span>
+          <span class="tech-badge">PythonAnywhere</span>
+        </div>
+        <ul class="bullets">
+          <li>Built a full-featured travel website for a client tourism company, delivering tour package listings, itinerary pages, online booking functionality, destination galleries, and contact systems.</li>
+          <li>Deployed the platform to PythonAnywhere with custom routing, template rendering, and form validation — live in production.</li>
+        </ul>
+      </div>
+
+      <!-- SPEEDY SPANNERS -->
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">Speedy Spanners</span>
+            <span class="item-subtitle"> — Garage & Vehicle Service Management Platform</span>
+          </div>
+          <div class="item-meta">Service Management · Android</div>
+        </div>
+        <div class="tech-line">
+          <span class="tech-label">Tech:</span>
+          <span class="tech-badge">React</span>
+          <span class="tech-badge">Node.js</span>
+          <span class="tech-badge">Express.js</span>
+          <span class="tech-badge">MongoDB</span>
+          <span class="tech-badge">Kotlin</span>
+          <span class="tech-badge">Android Studio</span>
+        </div>
+        <ul class="bullets">
+          <li>Engineered a garage management system handling repair workflows, customer records, service booking, and payment tracking.</li>
+          <li>Developed an Android (Kotlin) companion application integrating with the Express.js backend via REST APIs for operational support.</li>
+        </ul>
+      </div>
+
+      <!-- LOAN MANAGEMENT SYSTEM -->
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">Loan Management System</span>
+            <span class="item-subtitle"> — Fintech Lending Platform</span>
+          </div>
+          <div class="item-meta"><a href="https://github.com/abellepatrice/AbelleGroup" target="_blank" class="project-link">github.com/abellepatrice/AbelleGroup</a></div>
+        </div>
+        <div class="tech-line">
+          <span class="tech-label">Tech:</span>
+          <span class="tech-badge">Node.js</span>
+          <span class="tech-badge">React Native</span>
+          <span class="tech-badge">MongoDB</span>
+          <span class="tech-badge">TypeScript</span>
+          <span class="tech-badge">REST APIs</span>
+        </div>
+        <ul class="bullets">
+          <li>Built individual and group loan workflows with admin approval queues, repayment scheduling, and loan analytics dashboards.</li>
+          <li>Integrated a React Native mobile frontend with backend APIs, enabling borrowers to apply for and monitor loans from mobile devices.</li>
+        </ul>
+      </div>
+
+      <!-- ELITE SHOP -->
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">Elite Shop</span>
+            <span class="item-subtitle"> — E-Commerce Platform</span>
+          </div>
+          <div class="item-meta">E-Commerce</div>
+        </div>
+        <div class="tech-line">
+          <span class="tech-label">Tech:</span>
+          <span class="tech-badge">Next.js</span>
+          <span class="tech-badge">Supabase</span>
+          <span class="tech-badge">Tailwind CSS</span>
+          <span class="tech-badge">TypeScript</span>
+          <span class="tech-badge">Node.js</span>
+        </div>
+        <ul class="bullets">
+          <li>Developed a secure e-commerce platform with admin-only product management, authentication workflows, shopping cart, and purchase flows.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- OPEN SOURCE & REUSABLE TOOLS -->
+    <section class="section" style="margin-top: 8px;">
+      <h2 class="section-title">Open Source & Reusable Tools</h2>
+
+      <!-- PDF KIT -->
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">PDF Kit</span>
+            <span class="item-subtitle"> — Reusable Document Generation Utility</span>
+          </div>
+          <div class="item-meta"><a href="https://github.com/abellepatrice/pdf-kit" target="_blank" class="project-link">github.com/abellepatrice/pdf-kit</a></div>
+        </div>
+        <div class="tech-line">
+          <span class="tech-label">Tech:</span>
+          <span class="tech-badge">Python</span>
+          <span class="tech-badge">FPDF</span>
+          <span class="tech-badge">Automation</span>
+          <span class="tech-badge">CLI Tool</span>
+        </div>
+        <ul class="bullets">
+          <li>Lightweight Python utility for converting arbitrary text into formatted, downloadable PDF documents.</li>
+          <li>Features both CLI automation (<code>pdf.py</code>) and web interface scripts (<code>app.py</code>) designed for drop-in reuse across backend document export pipelines.</li>
+        </ul>
+      </div>
+
+      <!-- DATACOUNT -->
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">DataCount</span>
+            <span class="item-subtitle"> — Real-Time Telemetry & Network I/O Logger</span>
+          </div>
+          <div class="item-meta"><a href="https://github.com/abellepatrice/datacount" target="_blank" class="project-link">github.com/abellepatrice/datacount</a></div>
+        </div>
+        <div class="tech-line">
+          <span class="tech-label">Tech:</span>
+          <span class="tech-badge">Python</span>
+          <span class="tech-badge">psutil</span>
+          <span class="tech-badge">Network I/O</span>
+          <span class="tech-badge">CLI Tool</span>
+        </div>
+        <ul class="bullets">
+          <li>Reusable system network traffic monitor and I/O telemetry logger for developer workstations and Linux servers.</li>
+          <li>Continuously tracks network interfaces, calculates cumulative bytes sent and received, prints real-time updates, and logs daily bandwidth data to CSV.</li>
+        </ul>
+      </div>
+
+      <!-- FLASK E-COMMERCE STARTER -->
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">Flask E-Commerce Starter</span>
+            <span class="item-subtitle"> — Modular E-Commerce Backend Boilerplate</span>
+          </div>
+          <div class="item-meta"><a href="https://github.com/abellepatrice/e-commerce" target="_blank" class="project-link">github.com/abellepatrice/e-commerce</a></div>
+        </div>
+        <div class="tech-line">
+          <span class="tech-label">Tech:</span>
+          <span class="tech-badge">Python</span>
+          <span class="tech-badge">Flask</span>
+          <span class="tech-badge">MongoDB</span>
+          <span class="tech-badge">REST API</span>
+          <span class="tech-badge">JWT</span>
+        </div>
+        <ul class="bullets">
+          <li>Modular, reusable e-commerce backend template built with Flask and MongoDB, pre-configured with user authentication, product catalog, and order management endpoints.</li>
+        </ul>
+      </div>
+
+      <!-- CINEVERXE -->
+      <div class="item">
+        <div class="item-header">
+          <div>
+            <span class="item-title">Cineverxe</span>
+            <span class="item-subtitle"> — Movie Discovery Platform</span>
+          </div>
+          <div class="item-meta"><a href="https://github.com/abellepatrice/Cineverxe" target="_blank" class="project-link">github.com/abellepatrice/Cineverxe</a></div>
+        </div>
+        <div class="tech-line">
+          <span class="tech-label">Tech:</span>
+          <span class="tech-badge">Next.js</span>
+          <span class="tech-badge">TypeScript</span>
+          <span class="tech-badge">Tailwind CSS</span>
+          <span class="tech-badge">REST API</span>
+        </div>
+        <ul class="bullets">
+          <li>Built an open-source movie discovery platform integrated with an external movie API, featuring title browsing, cast details, ratings, and user watchlists.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <!-- ==================== PAGE 3 ==================== -->
+  <div class="page-break"></div>
+  <div class="page-block">
+    <!-- TECHNICAL SKILLS -->
+    <section class="section">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="skills-container">
+        <div class="skill-row">
+          <div class="skill-label">Frontend</div>
+          <div class="skill-list">React, React Native, Next.js, TypeScript, JavaScript, HTML5, CSS3, Tailwind CSS, Bootstrap</div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-label">Backend</div>
+          <div class="skill-list">Node.js, Express.js, NestJS, Flask (Python), PHP, Laravel, RESTful APIs</div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-label">Databases</div>
+          <div class="skill-list">PostgreSQL, Supabase (RLS, Auth, Storage), MongoDB, MySQL, Firebase, Microsoft SQL Server</div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-label">Mobile</div>
+          <div class="skill-list">React Native, Expo Router, Flutter, Dart, Kotlin, Android Studio</div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-label">DevOps & Tools</div>
+          <div class="skill-list">Git, GitHub, Vercel, Render, PythonAnywhere, Docker, Postman, Insomnia, VS Code, Ngrok</div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-label">Concepts</div>
+          <div class="skill-list">REST API Design, Authentication & Authorization, Row-Level Security (RLS), Role-Based Access Control (RBAC), Multi-Tenant Architecture, Database Schema Design, Responsive UI/UX, Cybersecurity Fundamentals, Agile / Scrum</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="section" style="margin-top: 10px;">
+      <h2 class="section-title">Education</h2>
+
+      <div class="edu-item">
+        <div class="item-header">
+          <div class="edu-degree">Advanced Certificate in Full Stack Development (MERN)</div>
+          <div class="item-meta">May 2024 – August 2024</div>
+        </div>
+        <div class="edu-school">Modcom Institute of Technology — Nairobi, Kenya</div>
+        <div class="edu-desc">Specialised in MongoDB, Express.js, React.js, Node.js, React Native, and TypeScript.</div>
+      </div>
+
+      <div class="edu-item" style="margin-top: 5px;">
+        <div class="item-header">
+          <div class="edu-degree">Certificate in Software Development</div>
+          <div class="item-meta">January 2024 – May 2024</div>
+        </div>
+        <div class="edu-school">Modcom Institute of Technology — Nairobi, Kenya</div>
+        <div class="edu-desc">Covered HTML5, CSS3, Python, Flask, SQL, and Android App Development using Kotlin.</div>
+      </div>
+
+      <div class="edu-item" style="margin-top: 5px;">
+        <div class="item-header">
+          <div class="edu-degree">Cybersecurity — Self-Directed Study & Coursework</div>
+          <div class="item-meta">Ongoing</div>
+        </div>
+        <div class="edu-school">Nairobi, Kenya</div>
+        <div class="edu-desc">Focused on Ethical Hacking, Network Security, Secure Application Development, and Cybersecurity Fundamentals.</div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS & ACHIEVEMENTS -->
+    <section class="section" style="margin-top: 10px;">
+      <h2 class="section-title">Certifications & Achievements</h2>
+
+      <div class="cert-item">
+        <div class="item-header">
+          <div class="edu-degree">Building Software (End-to-End) — Certificate of Completion</div>
+          <div class="item-meta">August 18, 2025</div>
+        </div>
+        <div class="edu-school">Udemy &nbsp;|&nbsp; Instructor: Cornelius Tonui</div>
+        <div style="font-size: 8pt; color: #475569; margin-top: 1px;">
+          Certificate No: <code>UC-82f8fb90-524d-431e-8f0d-b2f62069c772</code> &nbsp;|&nbsp;
+          Credential: <a href="https://ude.my/UC-82f8fb90-524d-431e-8f0d-b2f62069c772" target="_blank" style="color: #1d4ed8; text-decoration: none;">ude.my/UC-82f8fb90-524d-431e-8f0d-b2f62069c772</a>
+        </div>
+        <ul class="bullets" style="margin-top: 2px;">
+          <li>Completed practical coursework focused on software development workflows, application architecture, and end-to-end system development.</li>
+        </ul>
+      </div>
+
+      <div style="margin-top: 7px;">
+        <div style="font-size: 8.5pt; font-weight: 700; color: #0f172a; margin-bottom: 3px;">Key Professional Achievements:</div>
+        <ul class="ach-list">
+          <li><strong>Founder & Lead Developer, AbelleGroup:</strong> Architected, built, and deployed 6+ production-grade web and mobile applications across fintech, health tech, e-commerce, travel, and service management sectors.</li>
+          <li><strong>Client Production Deliveries:</strong> Successfully delivered and deployed Roaring Lion Tours & Travel as a live, operating client-facing production system.</li>
+          <li><strong>Security & KDPA 2019 Auditing:</strong> Delivered full security audit scoping, Row-Level Security (RLS) data isolation, and verified remediation against API vulnerabilities on production mobile health and fintech applications.</li>
+          <li><strong>Open-Source Tooling:</strong> Authored reusable developer utilities and telemetry libraries (PDF Kit, DataCount, Flask E-Commerce Starter, Cineverxe) active on GitHub.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- REFERENCES -->
+    <section class="section" style="margin-top: 10px;">
+      <h2 class="section-title">References</h2>
+      <div class="ref-box">
+        Available upon request (academic and professional references provided upon interview request).
+      </div>
+    </section>
+  </div>
+
 </div>
+
 </body>
 </html>
